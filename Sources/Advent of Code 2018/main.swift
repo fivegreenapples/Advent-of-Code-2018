@@ -26,6 +26,8 @@ let result: String
 switch theDay {
   case 1:
   result = day1(part: thePart)
+  case 2:
+  result = day2(part: thePart)
 
   default:
   print("No implementation for day \(theDay)")
