@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CommandLineKit",
+        "repositoryURL": "/Users/ben/Documents/Coding/CommandLineKit",
+        "state": {
+          "branch": "master",
+          "revision": "b90ec2b1ce468ba52cab0a300fc27dde0c542790",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
