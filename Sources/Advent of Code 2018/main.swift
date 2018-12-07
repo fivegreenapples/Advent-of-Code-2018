@@ -3,7 +3,7 @@ import CommandLineKit
 
 let cli = CommandLineKit.CommandLine()
 let day = IntOption(shortFlag: "d", longFlag: "day", required: true, helpMessage: "Which day of advent")
-let part = IntOption(shortFlag: "p", longFlag: "part", required: true, helpMessage: "Which partof the puzzle")
+let part = IntOption(shortFlag: "p", longFlag: "part", required: true, helpMessage: "Which part of the puzzle")
 cli.addOptions(day, part)
 
 do {
