@@ -21,11 +21,21 @@ if thePart != 1 && thePart != 2 {
   exit(1)
 }
 
+let result: String
+
 switch theDay {
   case 1:
-  day1(part: thePart)
+  result = day1(part: thePart)
 
   default:
   print("No implementation for day \(theDay)")
   exit(1)
 }
+
+print("")
+print("Advent of Code 2018")
+print("Day \(theDay), Part \(thePart)")
+print("")
+print(result)
+print("")
+print("")

@@ -1,32 +1,35 @@
-func day1(part: Int) {
+func day1(part: Int) -> String {
+
+	let day1Deltas = day1Input.split(separator: "\n").map { Int($0)! }
+
 
 	if part == 1 {
-		print(day1Input.reduce(0, { 
-			cur, next
-			in 
-			cur + next
-		}))
+		//
+		// Part 1
+		//
+		return String(day1Deltas.reduce(0, { $0 + $1 }))
 	}
 
-	if part == 2 {
 
-		var curFreq = 0
-		var seenFreqs = Set<Int>()
-		var foundDupe = false
+	//
+	// Part 2
+	//
+	var curFreq = 0
+	var seenFreqs = Set<Int>()
+	var foundDupe = false
 
-		while !foundDupe {
-			for delta in day1Input {
-				if seenFreqs.contains(curFreq) {
-					foundDupe = true
-					break
-				}
-				seenFreqs.insert(curFreq)
-				curFreq += delta
+	while !foundDupe {
+		for delta in day1Deltas {
+			if seenFreqs.contains(curFreq) {
+				foundDupe = true
+				break
 			}
+			seenFreqs.insert(curFreq)
+			curFreq += delta
 		}
-
-		print(curFreq)
 	}
+
+	return String(curFreq)
 }
 
 
