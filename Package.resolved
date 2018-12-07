@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "CommandLineKit",
-        "repositoryURL": "/Users/ben/Documents/Coding/CommandLineKit",
+        "repositoryURL": "https://github.com/fivegreenapples/CommandLine",
         "state": {
-          "branch": "master",
+          "branch": null,
           "revision": "b90ec2b1ce468ba52cab0a300fc27dde0c542790",
-          "version": null
+          "version": "3.1.0"
         }
       }
     ]
