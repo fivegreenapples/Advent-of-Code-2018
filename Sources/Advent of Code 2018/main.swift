@@ -10,6 +10,7 @@ do {
   try cli.parse()
 } catch {
   cli.printUsage(error)
+  exit(1)
 }
 
 let theDay = day.value!
@@ -26,5 +27,5 @@ switch theDay {
 
   default:
   print("No implementation for day \(theDay)")
-  exit(2)
+  exit(1)
 }
