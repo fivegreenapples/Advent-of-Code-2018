@@ -13,7 +13,11 @@ class Regex {
 
 		var submatches = [String]()
 		for i in 0..<firstMatch.numberOfRanges {
-			submatches.append(String(input[Range(firstMatch.range(at: i), in:input)!]))
+			if let thisRange = Range(firstMatch.range(at: i), in:input) {
+				submatches.append(String(input[thisRange]))
+			} else {
+				submatches.append("")
+			}
 		}
 
 		return submatches

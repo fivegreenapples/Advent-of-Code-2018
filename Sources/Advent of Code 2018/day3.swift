@@ -1,11 +1,8 @@
 import Foundation
 
-func day3(part: Int, test: Bool) -> String {
+func day3(part: Int, testMode: Bool) -> String {
 
-	var input = day3Input
-	if test {
-		input = day3InputTest
-	}
+	let input = testMode ? day4TestInput : day4Input
 	let claims = input.split(separator: "\n").map() { String($0) }
 	// #1 @ 1,3: 4x4
 	let regex = Regex(pattern: "^#([0-9]+) @ ([0-9]+),([0-9]+): ([0-9]+)x([0-9]+)$")
@@ -26,7 +23,7 @@ func day3(part: Int, test: Bool) -> String {
 		allClaims.append(claim)
 	}
 
-	if test {
+	if testMode {
 		fabric.render()
 	}
 	if part == 1 {
