@@ -50,14 +50,6 @@ struct FabricClaim {
 		self.height = height
 	}
 }
-struct Coord : Hashable {
-	var x: Int
-	var y: Int
-	init(_ x: Int, _ y: Int) {
-		self.x = x
-		self.y = y
-	}
-}
 class Fabric {
 	var canvasUsage = [Coord:(numClaims:Int, claimId:Int)]()
 	var extents: Coord = Coord(0,0)

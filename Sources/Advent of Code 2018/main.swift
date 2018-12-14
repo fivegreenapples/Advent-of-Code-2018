@@ -36,6 +36,9 @@ switch theDay {
 	result = day4(part: thePart, testMode: isTestMode)
 	case 5:
 	result = day5(part: thePart, testMode: isTestMode)
+	case 6:
+	result = day6(part: thePart, testMode: isTestMode)
+
 
 	default:
 	print("No implementation for day \(theDay)")
