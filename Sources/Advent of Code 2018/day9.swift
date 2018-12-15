@@ -1,7 +1,7 @@
 func day9(part: Int, testMode: Bool) -> String {
 	let input = testMode ? day9TestInput : day9Input
 	
-	let allGames = parseInput(input)
+	let allGames = parseDay9Input(input)
 	var highestScore = 0
 	
 	for (gameNum, game) in allGames.enumerated() {
@@ -100,7 +100,7 @@ class Marble {
 
 typealias GameSetup = (players: Int, lastMarble: Int)
 
-func parseInput(_ input: String) -> [GameSetup] {
+func parseDay9Input(_ input: String) -> [GameSetup] {
 
 	// 9 players; last marble is worth 25 points
 	let regex = Regex(pattern:"^([0-9]+) players; last marble is worth ([0-9]+) points$")
