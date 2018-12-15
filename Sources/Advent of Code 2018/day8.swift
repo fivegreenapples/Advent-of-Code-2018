@@ -1,5 +1,3 @@
-import Foundation
-
 func day8(part: Int, testMode: Bool) -> String {
 	let input = testMode ? day8TestInput : day8Input
 
