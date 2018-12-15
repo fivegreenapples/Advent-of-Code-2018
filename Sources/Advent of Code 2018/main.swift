@@ -38,6 +38,8 @@ switch theDay {
 	result = day5(part: thePart, testMode: isTestMode)
 	case 6:
 	result = day6(part: thePart, testMode: isTestMode)
+	case 7:
+	result = day7(part: thePart, testMode: isTestMode)
 
 
 	default:
