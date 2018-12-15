@@ -42,6 +42,40 @@ switch theDay {
 	result = day7(part: thePart, testMode: isTestMode)
 	case 8:
 	result = day8(part: thePart, testMode: isTestMode)
+	case 9:
+	result = day9(part: thePart, testMode: isTestMode)
+	case 10:
+	result = day10(part: thePart, testMode: isTestMode)
+	case 11:
+	result = day11(part: thePart, testMode: isTestMode)
+	case 12:
+	result = day12(part: thePart, testMode: isTestMode)
+	case 13:
+	result = day13(part: thePart, testMode: isTestMode)
+	case 14:
+	result = day14(part: thePart, testMode: isTestMode)
+	case 15:
+	result = day15(part: thePart, testMode: isTestMode)
+	case 16:
+	result = day16(part: thePart, testMode: isTestMode)
+	case 17:
+	result = day17(part: thePart, testMode: isTestMode)
+	case 18:
+	result = day18(part: thePart, testMode: isTestMode)
+	case 19:
+	result = day19(part: thePart, testMode: isTestMode)
+	case 20:
+	result = day20(part: thePart, testMode: isTestMode)
+	case 21:
+	result = day21(part: thePart, testMode: isTestMode)
+	case 22:
+	result = day22(part: thePart, testMode: isTestMode)
+	case 23:
+	result = day23(part: thePart, testMode: isTestMode)
+	case 24:
+	result = day24(part: thePart, testMode: isTestMode)
+	case 25:
+	result = day25(part: thePart, testMode: isTestMode)
 
 
 	default:
