@@ -5,7 +5,8 @@ let cli = CommandLineKit.CommandLine()
 let day = IntOption(shortFlag: "d", longFlag: "day", required: true, helpMessage: "Which day of advent")
 let part = IntOption(shortFlag: "p", longFlag: "part", required: true, helpMessage: "Which part of the puzzle")
 let testMode = BoolOption(shortFlag: "t", longFlag: "test", helpMessage: "Run test input")
-cli.addOptions(day, part, testMode)
+let verboseMode = BoolOption(shortFlag: "v", longFlag: "verbose", helpMessage: "Run with verbose output")
+cli.addOptions(day, part, testMode, verboseMode)
 
 do {
 	try cli.parse()
@@ -17,6 +18,7 @@ do {
 let theDay = day.value!
 let thePart = part.value!
 let isTestMode = testMode.value
+let isVerboseMode = verboseMode.value
 
 if thePart != 1 && thePart != 2 {
 	print("Part \(thePart) is not a valid part number for Advent of Code")
@@ -55,7 +57,7 @@ switch theDay {
 	case 14:
 	result = day14(part: thePart, testMode: isTestMode)
 	case 15:
-	result = day15(part: thePart, testMode: isTestMode)
+	result = day15(part: thePart, testMode: isTestMode, debugMode: isVerboseMode)
 	case 16:
 	result = day16(part: thePart, testMode: isTestMode)
 	case 17:

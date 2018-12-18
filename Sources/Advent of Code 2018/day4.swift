@@ -221,12 +221,12 @@ struct HourSleepLog: CustomStringConvertible {
 		return sleepiestMinute
 	}
 
-    var description: String {
+	var description: String {
 		var desc = ""
 		for v in self.minutes {
 			desc += (v == 0 ? "." : "#")
 		}
-        return desc
-    }
+		return desc
+	}
 }
 
