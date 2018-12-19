@@ -33,12 +33,14 @@ func runBattle(inDebugMode debugMode: Bool, withInput input:String, elfAttackPow
 	var roundsCompleted = 0
 
 	repeat {
+		var deadPlayers = Set<Coord>()
 		let sortedPlayerPositions = getSortedPlayerPositions(from: cavern)
 		for pos in sortedPlayerPositions {
-			guard let currentActor = cavern[pos]!.occupant else {
-				// actor must have been killed this round
+			if deadPlayers.contains(pos) {
 				continue
 			}
+			let currentActor = cavern[pos]!.occupant!
+
 			let enemyPositions: [Coord]
 			if currentActor.type == .Elf {
 				enemyPositions = getGoblinPositions(from: cavern)
@@ -88,6 +90,7 @@ func runBattle(inDebugMode debugMode: Bool, withInput input:String, elfAttackPow
 			cavern[thisTarget!]!.occupant!.health -= (currentActor.type == .Elf ? elfAttackPower : 3)
 			if cavern[thisTarget!]!.occupant!.health <= 0 {
 				cavern[thisTarget!]!.occupant = nil
+				deadPlayers.insert(thisTarget!)
 			}
 
 
