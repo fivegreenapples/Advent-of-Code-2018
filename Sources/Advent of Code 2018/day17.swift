@@ -189,22 +189,6 @@ func renderGround(with clay: [Coord:GroundType]) {
 
 }
 
-func getExtents(from: [Coord]) -> (min: Coord, max: Coord) {
-	let min = from.reduce(Coord(Int.max,Int.max), { current, next in 
-		return Coord(
-			next.x < current.x ? next.x : current.x,
-			next.y < current.y ? next.y : current.y
-		)
-	})
-	let max = from.reduce(Coord(0,0), { current, next in 
-		return Coord(
-			next.x > current.x ? next.x : current.x,
-			next.y > current.y ? next.y : current.y
-		)
-	})
-	return (min, max)
-}
-
 func parseDay17Input(_ input: String) -> Set<Coord> {
 
 	var claySet = Set<Coord>()
