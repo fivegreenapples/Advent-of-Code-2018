@@ -1,15 +1,15 @@
-func day15(part: Int, testMode: Bool, debugMode: Bool) -> String {
+func day15(part: Int, testMode: Bool, verboseMode: Bool) -> String {
 	let input = testMode ? day15TestInput : day15Input
 
 
 	var finalAnswer = ""
 	if part == 1 {
-		let battleResults = runBattle(inDebugMode: debugMode, withInput: input, elfAttackPower: 3)
+		let battleResults = runBattle(inVerboseMode: verboseMode, withInput: input, elfAttackPower: 3)
 		print("Power: 3 Battle won with", battleResults.elfLosses, "elf losses in", battleResults.roundsCompleted, "rounds and remaining health:", battleResults.totalRemainingHealth)
 		finalAnswer = "\(battleResults.roundsCompleted * battleResults.totalRemainingHealth)"
 	} else {
 		for power in 4...200 {
-			let battleResults = runBattle(inDebugMode: debugMode, withInput: input, elfAttackPower: power)
+			let battleResults = runBattle(inVerboseMode: verboseMode, withInput: input, elfAttackPower: power)
 			print("Power:", power, "Battle won with", battleResults.elfLosses, "elf losses in", battleResults.roundsCompleted, "rounds and remaining health:", battleResults.totalRemainingHealth)
 			finalAnswer = "\(battleResults.roundsCompleted * battleResults.totalRemainingHealth)"
 			if battleResults.elfLosses == 0 {
@@ -21,10 +21,10 @@ func day15(part: Int, testMode: Bool, debugMode: Bool) -> String {
 	return finalAnswer
 }
 
-func runBattle(inDebugMode debugMode: Bool, withInput input:String, elfAttackPower: Int) -> (roundsCompleted:Int, totalRemainingHealth:Int, elfLosses: Int) {
+func runBattle(inVerboseMode verboseMode: Bool, withInput input:String, elfAttackPower: Int) -> (roundsCompleted:Int, totalRemainingHealth:Int, elfLosses: Int) {
 
 	var cavern = parseDay15Input(input)
-	if debugMode {
+	if verboseMode {
 		renderCavern(cavern)
 	}
 
@@ -95,7 +95,7 @@ func runBattle(inDebugMode debugMode: Bool, withInput input:String, elfAttackPow
 
 
 		}
-		if debugMode {
+		if verboseMode {
 			renderCavern(cavern)
 		}
 		if !combatInprogress {
