@@ -67,7 +67,7 @@ switch theDay {
 	case 19:
 	result = day19(part: thePart, testMode: isTestMode, verboseMode: isVerboseMode)
 	case 20:
-	result = day20(part: thePart, testMode: isTestMode)
+	result = day20(part: thePart, testMode: isTestMode, verboseMode: isVerboseMode)
 	case 21:
 	result = day21(part: thePart, testMode: isTestMode)
 	case 22:

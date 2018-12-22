@@ -23,6 +23,25 @@ class Regex {
 
 		return submatches
 	}
+	func FindAllSubmatch<T: StringProtocol>(in input: T) -> [[String]] {
+		let myInput = String(input)
+		let matches = self.regex.matches(in: myInput, options: [], range: NSMakeRange(0, input.count))
+
+		var allMatches = [[String]]()
+		for m in matches {
+			var submatches = [String]()
+			for i in 0..<m.numberOfRanges {
+				if let thisRange = Range(m.range(at: i), in:myInput) {
+					submatches.append(String(myInput[thisRange]))
+				} else {
+					submatches.append("")
+				}
+			}
+			allMatches.append(submatches)
+		}
+
+		return allMatches
+	}
 }
 
 func getExtents(from: [Coord]) -> (min: Coord, max: Coord) {
